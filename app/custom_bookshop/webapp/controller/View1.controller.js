@@ -34,6 +34,10 @@ sap.ui.define([
                 this.byId("inputStock").setValue("");
                 this.byId("inputLocation").setValue("");
                 this.byId("inputGenre").setValue("");
+
+
+
+                
             }).catch(function (oError) {
                 // Handle error, e.g., show an error message
                 sap.m.MessageToast.show("Error adding book: " + oError.message);
