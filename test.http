@@ -1,0 +1,43 @@
+###
+#
+# Browse Books Service
+#
+GET http://localhost:4004/odata/v4/catalog/Books HTTP/1.1
+
+
+###
+## Browse Books Service with filter
+# 
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=price gt 20 HTTP/1.1
+
+###
+## Browse Books Service with filter and select
+#
+POST http://localhost:4004/odata/v4/catalog/Books HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby2",
+  "author": "F. Scott Fitzgerald",
+  "price": 10.99,
+  "stock": 100
+}
+
+
+
+### Browse Books Service with filter and select
+#
+PATCH  http://localhost:4004/odata/v4/catalog/Books(14047335-6381-495d-967b-ce0bb4ecf80c) HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby3",
+  "author": "F. Scott Fitzgerald",
+  "price": 10.99,
+  "stock": 100
+}
+
+
+### Delete a book
+#
+DELETE http://localhost:4004/odata/v4/catalog/Books(14047335-6381-495d-967b-ce0bb4ecf80c) HTTP/1.1 
